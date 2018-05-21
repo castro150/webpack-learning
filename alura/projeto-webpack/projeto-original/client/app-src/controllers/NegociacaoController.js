@@ -73,10 +73,7 @@ export class NegociacaoController {
     async importaNegociacoes() {
 
         try {
-            // System.import carregada o módulo sobre demanda, o webpack já vai ver
-            // e criar um bundle separado, o IMPORT do ES6 já vai fazer isso!
-            // const { NegociacaoService } = await System.import('../domain/negociacao/NegociacaoService.js');
-            const { NegociacaoService } = await import('../domain/negociacao/NegociacaoService.js');
+            const { NegociacaoService } = await import('../domain/negociacao/NegociacaoService');
             const service = new NegociacaoService();
 
             const negociacoes = await service.obtemNegociacoesDoPeriodo();
